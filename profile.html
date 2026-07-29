@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Profile</title>
+
+<style>
+
+body{
+
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#071426;
+    color:white;
+
+}
+
+
+.container{
+
+    padding:30px;
+
+}
+
+
+.profile-card{
+
+    background:rgba(255,255,255,0.12);
+    padding:25px;
+    border-radius:20px;
+
+}
+
+
+input{
+
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+
+    border:none;
+    border-radius:8px;
+
+}
+
+
+button{
+
+    width:100%;
+    padding:14px;
+
+    background:#ffffff;
+    color:#071426;
+
+    border:none;
+    border-radius:10px;
+
+    font-size:16px;
+    cursor:pointer;
+
+}
+
+
+.back{
+
+    display:block;
+    margin-top:20px;
+    color:white;
+    text-decoration:none;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<div class="profile-card">
+
+
+<h2>My Profile</h2>
+
+
+<input id="middleName" placeholder="Middle Name">
+
+
+<input id="lastName" placeholder="Last Name">
+
+
+<input id="username" placeholder="Username">
+
+
+<input id="email" placeholder="Email">
+
+
+<button onclick="saveProfile()">
+Save Changes
+</button>
+
+
+<a class="back" href="dashboard.html">
+← Back to Dashboard
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+
+let userData = JSON.parse(localStorage.getItem("vertexUser"));
+
+
+if(!userData){
+
+    window.location.href="register.html";
+
+}
+
+
+
+document.getElementById("middleName").value =
+userData.middleName || "";
+
+
+document.getElementById("lastName").value =
+userData.lastName || "";
+
+
+document.getElementById("username").value =
+userData.username || "";
+
+
+document.getElementById("email").value =
+userData.email || "";
+
+
+
+
+function saveProfile(){
+
+
+userData.middleName =
+document.getElementById("middleName").value;
+
+
+userData.lastName =
+document.getElementById("lastName").value;
+
+
+userData.username =
+document.getElementById("username").value;
+
+
+userData.email =
+document.getElementById("email").value;
+
+
+
+localStorage.setItem(
+"vertexUser",
+JSON.stringify(userData)
+);
+
+
+
+localStorage.setItem(
+"loggedInUser",
+userData.username
+);
+
+
+
+alert("Profile updated successfully!");
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
