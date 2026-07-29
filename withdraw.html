@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Withdraw</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<div class="profile-box">
+
+
+<h2>Withdraw</h2>
+
+
+<p>
+Request a withdrawal from your account.
+</p>
+
+
+
+<div class="card">
+
+
+<h3>Withdrawal Details</h3>
+
+
+
+<input 
+type="number" 
+placeholder="Enter amount"
+id="amount"
+>
+
+
+
+<select id="method">
+
+<option>
+Select withdrawal method
+</option>
+
+<option>
+Bank Transfer
+</option>
+
+<option>
+Crypto Wallet
+</option>
+
+</select>
+
+
+
+<button onclick="withdraw()">
+
+Submit Request
+
+</button>
+
+
+</div>
+
+
+
+
+<a class="back" href="dashboard.html">
+← Back to Dashboard
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+function withdraw(){
+
+
+const amount =
+document.getElementById("amount").value;
+
+
+
+const method =
+document.getElementById("method").value;
+
+
+
+if(amount === "" || method === "Select withdrawal method"){
+
+
+alert("Please complete all fields.");
+
+return;
+
+
+}
+
+
+
+alert(
+"Withdrawal request submitted successfully."
+);
+
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
