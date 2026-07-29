@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Deposit</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<div class="profile-box">
+
+
+<h2>Deposit</h2>
+
+<p>
+Choose how you want to add funds to your account.
+</p>
+
+
+
+
+<div class="card">
+
+<h3>Bank Transfer</h3>
+
+<p>
+Deposit using your bank account details.
+</p>
+
+
+<button onclick="selectMethod('Bank Transfer')">
+Continue
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Crypto Deposit</h3>
+
+<p>
+Deposit using your wallet address.
+</p>
+
+
+<button onclick="selectMethod('Crypto Deposit')">
+Continue
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="card" id="details" style="display:none;">
+
+
+<h3 id="methodTitle"></h3>
+
+
+<p>
+Your deposit instructions will appear here.
+</p>
+
+
+
+<button onclick="confirmDeposit()">
+Confirm
+</button>
+
+
+</div>
+
+
+
+
+<a class="back" href="dashboard.html">
+← Back to Dashboard
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+let selectedMethod = "";
+
+
+
+function selectMethod(method){
+
+
+selectedMethod = method;
+
+
+document.getElementById("details").style.display="block";
+
+
+document.getElementById("methodTitle").innerText = method;
+
+
+
+}
+
+
+
+
+
+function confirmDeposit(){
+
+
+alert(
+"Deposit method selected: " + selectedMethod
+);
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
