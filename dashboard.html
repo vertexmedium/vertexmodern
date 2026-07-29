@@ -1,87 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertex Platform Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>User Dashboard</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Loading screen */
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #050505;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+    z-index: 999;
+}
+
+body {
+    min-height: 100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url("key-background.jpg");
+
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+
+/* Dashboard */
+.dashboard {
+    padding: 40px;
+}
+
+.welcome {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+</style>
+
 </head>
 
 <body>
 
+
+<div id="loader">
+Loading...
+</div>
+
+
 <div class="dashboard">
 
-    <!-- Top Navigation -->
-    <header class="top-bar">
-
-        <div class="logo">
-            ◢V◣ Vertex Platform
-        </div>
-
-        <button class="menu-btn">
-            ☰
-        </button>
-
-    </header>
+<div class="welcome">
+Hi <span id="username">User</span> 👋
+</div>
 
 
-    <!-- Welcome -->
-    <section class="welcome">
-        <h1>Welcome Back</h1>
-        <p>Your personal platform dashboard</p>
-    </section>
+<div class="card">
+<h2>Account Overview</h2>
+<p>Your dashboard is ready.</p>
+</div>
 
 
-    <!-- Account Overview -->
-    <section class="overview-card">
-
-        <h2>Account Overview</h2>
-
-        <div class="balance">
-            <p>Total Balance</p>
-            <h1>$0.00</h1>
-        </div>
-
-        <div class="status">
-            <p>Account Status: <strong>Active</strong></p>
-        </div>
-
-    </section>
+<div class="card">
+<h2>Profile</h2>
+<p>Edit your personal information here.</p>
+</div>
 
 
-    <!-- Quick Actions -->
-    <section class="action-grid">
-
-        <a href="account.html" class="action-card">
-            <h3>👤 Account</h3>
-            <p>Manage your profile</p>
-        </a>
-
-
-        <a href="deposit.html" class="action-card">
-            <h3>💳 Deposit</h3>
-            <p>Add funds</p>
-        </a>
-
-
-        <a href="#" class="action-card">
-            <h3>📊 Activity</h3>
-            <p>View account activity</p>
-        </a>
-
-
-        <a href="login.html" class="action-card">
-            <h3>🚪 Logout</h3>
-            <p>Securely exit</p>
-        </a>
-
-    </section>
+<div class="card">
+<h2>Security</h2>
+<p>Your account protection settings.</p>
+</div>
 
 
 </div>
 
 
-<script src="script.js"></script>
+<nav>
+<a href="#">Dashboard</a>
+<a href="#">Account</a>
+<a href="#">Settings</a>
+</nav>
+
+
+
+<script>
+
+// 5 seconds loading
+setTimeout(function(){
+    document.getElementById("loader").style.display="none";
+},5000);
+
+
+// Example username display
+let registeredName = "Jennifer";
+
+document.getElementById("username").innerHTML = registeredName;
+
+
+</script>
+
 
 </body>
 </html>
