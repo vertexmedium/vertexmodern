@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<div class="profile-box">
+
+<h1>
+Hi, <span id="username"></span>
+</h1>
+
+<p>Your account dashboard</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Account Balance</h3>
+
+<h1>$0.00</h1>
+
+<p>Available balance</p>
+
+</div>
+
+
+
+
+
+<div class="actions">
+
+
+
+<div class="action-card">
+
+<a href="deposit.html">
+Deposit
+</a>
+
+</div>
+
+
+
+
+<div class="action-card">
+
+<a href="withdraw.html">
+Withdraw
+</a>
+
+</div>
+
+
+
+
+
+<div class="action-card">
+
+<a href="profile.html">
+Profile
+</a>
+
+</div>
+
+
+
+
+
+<div class="action-card">
+
+<a href="settings.html">
+Settings
+</a>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+<h3>Account Status</h3>
+
+<p>
+Your account is active.
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="menu">
+
+
+<a href="dashboard.html">
+Home
+</a>
+
+
+
+<a href="profile.html">
+Profile
+</a>
+
+
+
+<a href="settings.html">
+Settings
+</a>
+
+
+
+<a href="#" onclick="logout()">
+Logout
+</a>
+
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+const user = localStorage.getItem("loggedInUser");
+
+
+
+if(!user){
+
+window.location.href="login.html";
+
+}
+
+
+
+document.getElementById("username").innerText = user;
+
+
+
+
+
+function logout(){
+
+
+localStorage.removeItem("loggedInUser");
+
+
+window.location.href="login.html";
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
